@@ -11,6 +11,15 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var map = {};
+
+    return function(arg) {
+      if (!map.hasOwnProperty(arg)) {
+        map[arg] = func(arg);
+      }
+      console.log(map);
+      return map[arg];
+    }
   };
 
 }).call(this);
