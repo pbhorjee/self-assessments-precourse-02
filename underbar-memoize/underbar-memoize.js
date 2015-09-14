@@ -25,7 +25,7 @@ var _ = {};
         memo[args] = func.apply(this, arguments);
         // return it
         return memo[args];
-      };
+      }
     }
   };
 
