@@ -11,6 +11,17 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var memo = {};
+    return function() {
+      var args = '';
+      for (var i = 0; i < arguments.length; i++) {
+        args += arguments[i];
+      }
+      if (!(args in memo)) {
+        memo[args] = func.apply(null, arguments);
+      }
+      return memo[args];
+    }
   };
 
 }).call(this);
