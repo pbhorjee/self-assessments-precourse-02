@@ -5,9 +5,20 @@ var _ = {};
 
   // Return the results of applying an iterator to each element.
   _.map = function(collection, iterator) {
-    // map() is a useful primitive iteration function that works a lot
-    // like each(), but in addition to running the operation on all
-    // the members, it also maintains an array of results.
+    var result;
+    if (Array.isArray(collection)) {
+      result = [];
+      for (var i = 0; i < collection.length; i++) {
+        result.push(iterator(collection[i]));
+      }
+      return result;
+    } else {
+      result = {};
+      for (var key in collection) {
+        result[key] = iterator(collection[key]);
+      }
+      return result;
+    }
   };
 
 }).call(this);
