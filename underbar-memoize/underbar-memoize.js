@@ -17,7 +17,6 @@ var _ = {};
       if (!map.hasOwnProperty(arg)) {
         map[arg] = func(arg);
       }
-      console.log(map);
       return map[arg];
     }
   };
