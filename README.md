@@ -11,8 +11,8 @@
 
 ## Grading Outline
 
-- [ ] underbar-map
-- [ ] underbar-uniq
+- [ ] underbar-map COMPLETE
+- [ ] underbar-uniq COMPLETE
 - [ ] underbar-memoize
 - [ ] underbar-extend
 
