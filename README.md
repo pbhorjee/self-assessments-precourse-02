@@ -14,7 +14,7 @@
 - [x] underbar-map COMPLETE
 - [x] underbar-uniq COMPLETE
 - [x] underbar-memoize COMPLETE
-- [ ] underbar-extend
+- [x] underbar-extend COMPLETE
 
 ## Self-Grading Process
 
