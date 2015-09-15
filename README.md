@@ -11,10 +11,10 @@
 
 ## Grading Outline
 
-- [ ] underbar-map
-- [ ] underbar-uniq
-- [ ] underbar-memoize
-- [ ] underbar-extend
+- [ COMPLETE ] underbar-map
+- [ COMPLETE ] underbar-uniq
+- [ COMPLETE ] underbar-memoize
+- [ COMPLETE ] underbar-extend
 
 ## Self-Grading Process
 
