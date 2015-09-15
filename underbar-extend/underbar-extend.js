@@ -15,6 +15,26 @@ var _ = {};
   //     bla: "even more stuff"
   //   }); // obj1 now contains key1, key2, key3 and bla
   _.extend = function(obj) {
+    var args = [];
+    var temp = null;
+    for(var i = 0; i < arguments.length; i++){
+      temp = arguments[i];
+      args.push(temp);
+    }
+
+    var extended = function(arr){
+      for(var j = 0; j < arr.length; j++){
+        for(var prop in arr[j]){
+          if(obj[prop] === arr[j][prop]){
+            obj[prop] = arr[j][prop];
+          } else {
+            obj[prop] = arr[j][prop];
+          }
+        }
+      }
+      return obj;
+    }
+    return extended(args);
   };
 
 }).call(this);
