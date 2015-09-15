@@ -11,6 +11,13 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var cache = {};
+    return function(args) {
+      if (!cache[args]) {
+        cache[args] = func.apply(null, arguments);
+      }
+      return cache[args];
+    }
   };
 
 }).call(this);
