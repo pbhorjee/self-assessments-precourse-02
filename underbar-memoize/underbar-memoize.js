@@ -15,11 +15,10 @@ var _ = {};
 
     return function(argument){
       if (results[argument] === undefined){
-        results[arguement] = func.apply(null, argument);
-
+        results[argument] = func.apply(null, argument);
       }
     }
-    return results[arguement];
+    return results[argument];
 
   };
 
