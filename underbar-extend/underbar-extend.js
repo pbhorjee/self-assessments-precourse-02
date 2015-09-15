@@ -15,6 +15,19 @@ var _ = {};
   //     bla: "even more stuff"
   //   }); // obj1 now contains key1, key2, key3 and bla
   _.extend = function(obj) {
+  var newObject = {};
+  var temp = {};
+  for (var key in arguments) {
+    if (arguments[key] !== null && typeof arguments[key] === 'object' )
+    temp = arguments[key];
+    for (var thing in temp){
+      newObject[thing]=temp[thing];
+      } 
+    }
+  if (JSON.stringify(newObject)===JSON.stringify(arguments[0])){
+    return arguments[0];
+    } 
+  return newObject;
   };
 
 }).call(this);
