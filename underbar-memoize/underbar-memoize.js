@@ -11,6 +11,17 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var computed = {};
+
+    return function(){
+      var args = Array.prototype.slice.call(arguments);
+      if(computed.hasOwnProperty(args)){
+          return computed[args];
+        } else {
+          computed[args] = func.apply(this, arguments)
+          return computed[args];
+        }
+      }
   };
 
 }).call(this);
