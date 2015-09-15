@@ -11,6 +11,19 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+  var memoize = {};
+
+  return function() {
+    
+    var key = JSON.stringify(arguments);
+    if (key in memoize) {
+      return memoize[key];
+    }else {
+      var value = func.apply(this, arguments);
+      memoize[key] = value;
+      return value;
+      }
+    }
   };
 
 }).call(this);
