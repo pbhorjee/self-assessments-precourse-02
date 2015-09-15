@@ -2,7 +2,6 @@ var _ = {};
 
 (function() {
 
-
   // Extend a given object with all the properties of the passed in
   // object(s).
   //
@@ -15,6 +14,16 @@ var _ = {};
   //     bla: "even more stuff"
   //   }); // obj1 now contains key1, key2, key3 and bla
   _.extend = function(obj) {
+    //extend is a way of merging objects 
+    //overwrites key that already exists in the obj
+    //iterate through all the new objs passed in after the first/original obj
+    //for each obj (in loop), "extend" its key-value pairs to the origina obj
+    for(var i = 1; i<arguments.length; i++){
+      for(var key in arguments[i]){
+        obj[key] = arguments[i][key];
+      }
+    }
+    return obj;
   };
 
 }).call(this);

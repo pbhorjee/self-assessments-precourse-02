@@ -11,6 +11,21 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    //when function is called, check if result value has already been called
+    //if so, return it
+    //if not, call function and store it in memory
+    var storage = {};
+
+    return function(key){
+      if(key in storage){
+      return storage[key]; //returning that value
+      } else {
+        storage[key] = func.apply(this, arguments);
+        //func.apply(this, arguments) 
+        //because arguments have access to multiple parameters
+      }
+      return storage[key];
+      }
   };
 
 }).call(this);
