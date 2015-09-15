@@ -13,7 +13,7 @@ var _ = {};
         result.push(index);
       }
      });
-    return arr;
+    return array;
   };
 
 }).call(this);
