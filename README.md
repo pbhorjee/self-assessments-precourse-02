@@ -11,10 +11,10 @@
 
 ## Grading Outline
 
-- [ ] underbar-map
-- [ ] underbar-uniq
-- [ ] underbar-memoize
-- [ ] underbar-extend
+- [complete] underbar-map
+- [complete] underbar-uniq
+- [SignificantProgress] underbar-memoize
+- [complete] underbar-extend
 
 ## Self-Grading Process
 
@@ -43,22 +43,22 @@ Solutions are submitted via [Pull Request](https://help.github.com/articles/usin
 ## map
 Return the results of applying an iterator to each element in a collection.
 
-* [ ] Implement a `_.map` function
+* [complete] Implement a `_.map` function
 
 
 
 ## unique
 Return a duplicate-free version of the collection.
 
-* [ ] Implement `_.uniq` function
+* [complete] Implement `_.uniq` function
 
 ## memoize
 Return a function that, when called, will check if it has
 already computed the result for the given argument and return the precomputed  value instead when possible.
 
-* [ ] Implement an `_.memoize` function
+* [SignificantProgress] Implement an `_.memoize` function
 
 ## extend
 Extend a given object with all the properties of the passed in object(s).
 
-* [ ] Implement an `.extend` function
+* [complete] Implement an `.extend` function
