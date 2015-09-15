@@ -11,6 +11,16 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var cache = {};
+    return function() {
+      var arg = Array.prototype.slice.call(arguments);
+      if(cache.hasOwnProperty(arg)){ //if with already seen argument, get it from cache and return
+      return cache[arg];
+      } else { //if with a new argument, store it in cache and return it.
+        cache[arg] = func.apply(this,arg);
+        return cache[arg];
+      }
+    };
+    //this took me more than an hour to figure out..
   };
-
 }).call(this);
