@@ -11,6 +11,15 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var results = {};
+
+    return function(argument){
+      if (results[argument] === undefined){
+        results[argument] = func.apply(null, argument);
+      }
+    }
+    return results[argument];
+
   };
 
 }).call(this);
