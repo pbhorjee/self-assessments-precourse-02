@@ -11,6 +11,20 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    
+    //store args and results in an object
+    // when function is called check results object for that arg
+    // if result doesn't exist run function & save & return result, else return value from results object
+    var results = {};
+    return func.prototype.apply(this) {
+      if (results[this]) {
+        return results[this];
+      }else {
+        results[this] = func(this);
+        return func(this);
+      }
+    }
+
   };
 
 }).call(this);
