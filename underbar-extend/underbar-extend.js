@@ -15,6 +15,24 @@ var _ = {};
   //     bla: "even more stuff"
   //   }); // obj1 now contains key1, key2, key3 and bla
   _.extend = function(obj) {
+    var args = Array.prototype.slice.call(arguments,1);
+
+    var loopObjects = function() {
+      if (args.length === 0) {
+        return;
+      }
+
+      var tmpObj = args.pop();
+
+      for (var key in tmpObj) {
+        obj[key] = tmpObj[key];
+      }
+
+      loopObjects();
+    };
+
+    loopObjects();
+
   };
 
 }).call(this);
