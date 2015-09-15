@@ -11,6 +11,22 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var memos = [];
+
+    return (function(){
+      if(memos.length === 0){
+        return memos[0];
+      } else {
+        for(var i = 0; i < memos.length; i++){
+          if(memos[i] === func){
+            return memos[i];
+          } else {
+            memos.push(func);
+            return memos[i];
+          }
+        }
+      }
+    })();
   };
 
 }).call(this);
