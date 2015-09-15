@@ -11,7 +11,7 @@ var _ = {};
     var mapped = [];
 
     for (var i = 0; i < collection.length; i++) {
-    	mapped.push(iterator(collection[i], i, collection));
+      mapped.push(iterator(collection[i], i, collection));
     }
 
     return mapped;

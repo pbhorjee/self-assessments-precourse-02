@@ -11,6 +11,19 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var results = {};
+
+    return function () {
+      for (var key in results) {
+        if (key === arguments[0]) {
+          return results[key];
+        }
+      }
+
+      results[arguments][0] = func.apply(this, arguments[0]);
+
+      return results[arguments][0];
+    }
   };
 
 }).call(this);
