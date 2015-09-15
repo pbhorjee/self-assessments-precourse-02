@@ -12,14 +12,17 @@ var _ = {};
   // instead if possible.
   _.memoize = function(func) {
     var memo = {};
-    var args = Array.prototype.slice.call(arguments)
-    return function() {
+    var args = Array.prototype.slice.call(arguments, 1);
+    return function () {
       if (args in memo) {
         return memo[args];
       } else {
-        return memo[args] = func.apply(this, args);
+        // This syntax seems superfluous to me, but the syntaxilizer suggested against
+        // return memo[args] = func.apply(this, args);
+        memo[args] = func.apply(this, args);
+        return func.apply(this, args);
       }
-    }
+    }();
   };
 
 }).call(this);
