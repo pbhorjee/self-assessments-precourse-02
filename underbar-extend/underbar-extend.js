@@ -17,21 +17,15 @@ var _ = {};
   _.extend = function(obj) {
     var args = Array.prototype.slice.call(arguments,1);
 
-    var loopObjects = function() {
-      if (args.length === 0) {
-        return;
+    var ret = JSON.parse(JSON.stringify(obj));
+
+    for (var i = 0, l = args.length; i < l; i++) {
+      for (var key in args[i]) {
+        ret[key] = args[i][key];
       }
+    }
 
-      var tmpObj = args.pop();
-
-      for (var key in tmpObj) {
-        obj[key] = tmpObj[key];
-      }
-
-      loopObjects();
-    };
-
-    loopObjects();
+    return ret;
 
   };
 
