@@ -14,11 +14,13 @@ var _ = {};
 		var results = {};
 
 		return function(arg) {
-			if (arg in results) {
-				return results[arg];
+      var key = arg.toString();
+
+			if (key in results) {
+				return results[key];
 			}
-			results[arg] = func(arg);
-			return results[arg];
+			results[key] = func(arg);
+			return results[key];
 		};
   };
 
