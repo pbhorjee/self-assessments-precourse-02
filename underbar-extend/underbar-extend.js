@@ -15,6 +15,20 @@ var _ = {};
   //     bla: "even more stuff"
   //   }); // obj1 now contains key1, key2, key3 and bla
   _.extend = function(obj) {
+    obj = obj || {};
+    
+    var i;
+    var key;
+    
+    for( i = 1; i < arguments.length; i++ ) {
+      for( key in argumets[i] ) {
+        if( !obj.hasOwnProperty(key) ) {
+          obj[key] = arguments[i][key];
+        }
+      }
+    }
+    
+    return obj;
   };
 
 }).call(this);
