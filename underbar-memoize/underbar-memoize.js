@@ -11,6 +11,16 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var cache = {};
+    var x = arguments;
+    return function(x) {
+      if (cache.hasOwnProperty(x)) {
+        return cache[x];
+      } else {
+        cache[x] = func.apply(this, x);
+        return cache[x];
+      }
+    }
   };
 
 }).call(this);
