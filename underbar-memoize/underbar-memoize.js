@@ -11,6 +11,15 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var memos = {};
+    var args = [].slice.call(arguments);
+    if (!(args in memos)) {
+      memos[args] = func.apply(this, args);
+      return memos[args];
+    }
+    else {
+      return memos[args];
+    }
   };
 
 }).call(this);
