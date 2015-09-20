@@ -12,15 +12,15 @@ var _ = {};
   // instead if possible.
   _.memoize = function(func) {
     var cache = {};
-    var x = arguments;
-    return function(x) {
-      if (cache.hasOwnProperty(x)) {
-        return cache[x];
+    return function(key) {
+      if (cache.hasOwnProperty(key)) {
+        return cache[key];
       } else {
-        cache[x] = func.apply(this, x);
-        return cache[x];
+        cache[key] = func.apply(this, arguments);
+        return cache[key];
       }
     }
+
   };
 
 }).call(this);
