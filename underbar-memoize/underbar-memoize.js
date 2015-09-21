@@ -1,7 +1,17 @@
 var _ = {};
 
 (function() {
-
+  _.each = function(collection, iterator) {
+    if(Array.isArray(collection)) {
+      for(var i = 0; i < collection.length; i++) {
+        iterator(collection[i], i, collection);
+      }
+    } else {
+      for(var key in collection) {
+        iterator(collection[key], key, collection);
+      }
+    }
+  };
   // Memorize an expensive function's results by storing them. You may assume
   // that the function takes only one argument and that it is a primitive.
   // memoize could be renamed to oncePerUniqueArgumentList; memoize does the
@@ -11,6 +21,15 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var cache = {};
+    return function() {
+      var arg = Array.prototype.slice.call(arguments);
+      if (arg in cache) {
+       return cache[arg];
+      }
+      cache[arg] = func.apply(this, arguments);
+      return cache[arg];
+    };
   };
 
 }).call(this);
