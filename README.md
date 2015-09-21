@@ -11,10 +11,10 @@
 
 ## Grading Outline
 
-- [ ] underbar-map
-- [ ] underbar-uniq
-- [ ] underbar-memoize
-- [ ] underbar-extend
+- [Complete] underbar-map
+- [Complete] underbar-uniq
+- [Complete] underbar-memoize
+- [Complete] underbar-extend
 
 ## Self-Grading Process
 
@@ -43,7 +43,7 @@ Solutions are submitted via [Pull Request](https://help.github.com/articles/usin
 ## map
 Return the results of applying an iterator to each element in a collection.
 
-* [ ] Implement a `_.map` function
+* [Complete] Implement a `_.map` function
 
 
 
