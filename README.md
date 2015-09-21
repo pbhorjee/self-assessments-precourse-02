@@ -11,10 +11,10 @@
 
 ## Grading Outline
 
-- [ ] underbar-map
-- [ ] underbar-uniq
-- [ ] underbar-memoize
-- [ ] underbar-extend
+- [Complete] underbar-map
+- [Complete] underbar-uniq
+- [Complete] underbar-memoize
+- [Complete] underbar-extend
 
 ## Self-Grading Process
 
@@ -30,7 +30,7 @@ The file `syntaxalyze.html` is included. Open it in your browser and then drag y
 
 Solutions are submitted via [Pull Request](https://help.github.com/articles/using-pull-requests). Follow these steps:
 
-1. From **your fork**, select `Pull Requests` and then create a `New pull request`. 
+1. From **your fork**, select `Pull Requests` and then create a `New pull request`.
 2. STOP. *Before* you `Click to create a pull request for this comparison` you must **adjust the target branch** (aka `base branch`) to be your username. Once changed, the pull-request heading should look like this:
 
   > remotebeta:username ... username:master
@@ -43,22 +43,22 @@ Solutions are submitted via [Pull Request](https://help.github.com/articles/usin
 ## map
 Return the results of applying an iterator to each element in a collection.
 
-* [ ] Implement a `_.map` function
+* [Complete] Implement a `_.map` function
 
 
 
 ## unique
 Return a duplicate-free version of the collection.
 
-* [ ] Implement `_.uniq` function
+* [Complete] Implement `_.uniq` function
 
 ## memoize
 Return a function that, when called, will check if it has
 already computed the result for the given argument and return the precomputed  value instead when possible.
 
-* [ ] Implement an `_.memoize` function
+* [Complete] Implement an `_.memoize` function
 
 ## extend
 Extend a given object with all the properties of the passed in object(s).
 
-* [ ] Implement an `.extend` function
+* [Complete] Implement an `.extend` function
