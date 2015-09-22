@@ -11,6 +11,28 @@ var _ = {};
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+
+  var table={};
+   return function() {
+      if(table.hasOwnProperty(arguments[0]))
+              return table[arguments[0]]
+          else {
+              table[arguments[0]] = func.apply(this,arguments)
+              return table[arguments[0]]
+                }
+    
+     }
+
+
+
+
+
+
+
+
+
+
+
   };
 
 }).call(this);
