@@ -21,9 +21,7 @@ var _ = {};
         // the members, it also maintains an array of results.
         var mapped = [];
         _.each(collection, function (item) {
-            if (iterator(item)) {
-                mapped.push(item);
-            }
+            mapped.push(iterator(item));
         });
         return mapped;
     };

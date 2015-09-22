@@ -2,6 +2,18 @@ var _ = {};
 
 (function () {
 
+    _.each = function (collection, action) {
+        if (Array.isArray(collection)) {
+            for (var i = 0; i < collection.length; i++) {
+                action(collection[i], i, collection);
+            }
+        } else {
+            for (var key in collection) {
+                action(collection[key], key, collection);
+            }
+        }
+    };
+
 
     // Extend a given object with all the properties of the passed in
     // object(s).
