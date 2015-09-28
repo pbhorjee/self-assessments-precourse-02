@@ -1,16 +1,27 @@
 var _ = {};
 
-(function() {
 
-  // Memorize an expensive function's results by storing them. You may assume
-  // that the function takes only one argument and that it is a primitive.
-  // memoize could be renamed to oncePerUniqueArgumentList; memoize does the
-  // same thing as once, but based on many sets of unique arguments.
-  //
-  // _.memoize should return a function that, when called, will check if it has
-  // already computed the result for the given argument and return that value
-  // instead if possible.
-  _.memoize = function(func) {
-  };
+_.each = function (collection, iterator) {
+  if (typeof iterator !== 'function') { return; }
 
-}).call(this);
+  if (Array.isArray(collection)) {
+    for (var i = 0; i < collection.length; i++) {
+      iterator(collection[i], i, collection);
+    }
+  } else {
+    for (var o in collection) {
+      iterator(collection[o], o, collection);
+    }
+  }
+};
+
+_.memoize = function (func) {
+  var results = {};
+  return function() {
+    var strArgs = JSON.stringify(arguments);
+    if (!results[strArgs]) {
+      results[strArgs] = func.apply(this, arguments);
+    }
+    return results[strArgs];
+  }
+}

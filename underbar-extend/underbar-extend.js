@@ -1,20 +1,27 @@
 var _ = {};
 
-(function() {
+_.extend = function (obj) {
+  var args = Array.prototype.slice.call(arguments, 1);
 
+  _.each(args, function (object) {
+    _.each(object, function (value, key) {
+      obj[key] = value;
+    });
+  });
 
-  // Extend a given object with all the properties of the passed in
-  // object(s).
-  //
-  // Example:
-  //   var obj1 = {key1: "something"};
-  //   _.extend(obj1, {
-  //     key2: "something new",
-  //     key3: "something else new"
-  //   }, {
-  //     bla: "even more stuff"
-  //   }); // obj1 now contains key1, key2, key3 and bla
-  _.extend = function(obj) {
-  };
+  return obj;
+};
 
-}).call(this);
+_.each = function (collection, iterator) {
+  if (typeof iterator !== 'function') { return; }
+
+  if (Array.isArray(collection)) {
+    for (var i = 0; i < collection.length; i++) {
+      iterator(collection[i], i, collection);
+    }
+  } else {
+    for (var o in collection) {
+      iterator(collection[o], o, collection);
+    }
+  }
+};
